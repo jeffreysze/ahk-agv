@@ -1,0 +1,86 @@
+<div class="container-fluid bg-secondary min-vh-100 ">
+  <div class="container bg-light pt-3  ">
+    <h2 class="mb-4">Navigation</h2>
+    <div class="dropdown">
+      <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown">
+        Select Map: Map 1
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Map 1</a></li>
+        <li><a class="dropdown-item" href="#">Map 2</a></li>
+        <li><a class="dropdown-item" href="#">Map 3</a></li>
+      </ul>
+    </div>
+    <br>
+    <button type="button" class="btn btn-outline-dark">
+      Add Point
+    </button>
+    <button type="button" class="btn btn-outline-dark">
+      Edit Points
+    </button>
+    <button type="button" class="btn btn-outline-dark">
+      Add Plan
+    </button>
+    <button type="button" class="btn btn-outline-dark ">
+      Localize
+    </button>
+    <button type="button" id="btn-id" class="btn btn-outline-dark float-end">
+      <svg width="16" height="16" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+        <path
+          d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0" />
+      </svg>
+    </button>
+    <hr>
+    <h3>Map 1</h3>
+    <div class="row position-relative">
+      <div class="col-md-9 col-sm-12 ">
+        <img src="/images/floor-demo.png" class="img-fluid w-100" alt="Responsive image">
+
+      </div>
+      <div id="camera-div" class="col-md-7 col-sm-12 bg-white position-absolute border border-secondary align-middle"
+        style="display:none;">
+
+        <div class="ratio ratio-16x9   d-flex justify-content-center align-middle"
+          style="background-color:#cccccc; align-items: center; font-size: 50px">
+          Camera Feed
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-12 bg-warning align-middle">
+        <style scoped>
+          .h1 {
+            color: #ffc107;
+          }
+
+          p {
+            color: #ffc107;
+          }
+        </style>
+        <p>This is a paragraph in a scoped div. The text should be "SaddleBrown".</p>
+        <div id="zone_joystick"></div>
+
+        <script type="text/javascript" src="./js/nipplejs.js"></script>
+        <script type="text/javascript">
+          var options = {
+            zone: document.getElementById('zone_joystick'),
+            mode: 'static',
+            position: { left: '50%', top: '50%' },
+            color: 'red'
+          };
+          var manager = nipplejs.create(options);
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#btn-id").on("click", function () {
+      $("#camera-div").toggle();
+    });
+  });
+  function test() {
+    alert("abc");
+  }
+</script>

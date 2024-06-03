@@ -1,0 +1,40 @@
+<div class="container-fluid bg-secondary">
+  <div class="container bg-light pt-3 ">
+    <div class="dropdown">
+      <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+        Select Map: Map 1
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Map 1</a></li>
+        <li><a class="dropdown-item" href="#">Map 2</a></li>
+        <li><a class="dropdown-item" href="#">Map 3</a></li>
+      </ul>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-9 col-sm-12 bg-info">
+        <img src="/images/floor-demo.png" class="img-fluid w-100" alt="Responsive image">
+      </div>
+      <div class="col-md-3 col-sm-12 bg-warning align-middle">
+        <style scoped>
+          .h1 { color: FireBrick;   }
+          p  { color: SaddleBrown; }
+        </style>
+        <h1 class="h1">This is an H1 in a scoped div. Regardless of global styles the text should be "FireBrick".</h1>
+        <p>This is a paragraph in a scoped div. The text should be "SaddleBrown".</p>
+        <div id="zone_joystick"></div>
+
+        <script type="text/javascript" src="./js/nipplejs.js"></script>
+        <script type="text/javascript">
+          var options = {
+            zone: document.getElementById('zone_joystick'),
+            mode: 'static',
+            position: { left: '50%', top: '25%' },
+            color: 'red'
+          };
+          var manager = nipplejs.create(options);
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

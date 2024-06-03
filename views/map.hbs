@@ -1,0 +1,69 @@
+<div class="container-fluid bg-secondary min-vh-100 ">
+  <div class="container bg-light pt-3  ">
+    <h2 class="mb-4">Create Map</h2>
+    <div class="dropdown">
+      <button id="start_btn" type="button" class="btn btn-outline-dark" >
+        Start Mapping
+      </button>
+      <button id="stop_btn" type="button" class="btn btn-danger" style="display:none;">
+        STOP Mapping
+      </button>
+      <button type="button" class="btn btn-outline-dark" >
+        Save As
+      </button>
+      <!--button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown">
+        Select Map: Map 1
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Map 1</a></li>
+        <li><a class="dropdown-item" href="#">Map 2</a></li>
+        <li><a class="dropdown-item" href="#">Map 3</a></li>
+      </ul-->
+    </div>
+    <hr>
+    <div id="map" class="row" style="display:none;">
+      <div class="col-md-9 col-sm-12 ">
+        <img src="/images/floor-demo.png" class="img-fluid w-100" alt="Responsive image">
+      </div>
+      <div class="col-md-3 col-sm-12 bg-warning align-middle" style="min-height:150px">
+        <style scoped>
+          .h1 { color: #ffc107   }
+          p  { color: #ffc107 }
+        </style>
+        <p>This is a paragraph in a scoped div. The text should be "SaddleBrown".</p>
+        <div id="zone_joystick"></div>
+
+        <script type="text/javascript" src="./js/nipplejs.js"></script>
+        <script type="text/javascript">
+          var options = {
+            zone: document.getElementById('zone_joystick'),
+            mode: 'static',
+            position: { left: '50%', top: '25%' },
+            color: 'red'
+          };
+          var manager = nipplejs.create(options);
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+<script src = "js/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#start_btn").on("click", function() {
+      $("#map").show();
+      $("#stop_btn").show();
+      $("#start_btn").hide();
+      $
+    });
+    $("#stop_btn").on("click", function() {
+      $("#map").show();
+      $("#stop_btn").hide();
+      $("#start_btn").show();
+      $
+    });
+  });
+  function test(){
+    alert("abc");
+  }
+</script>
